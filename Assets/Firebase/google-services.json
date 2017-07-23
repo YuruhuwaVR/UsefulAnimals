@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "532804692443",
+    "firebase_url": "https://usefulanimals-37241.firebaseio.com",
+    "project_id": "usefulanimals-37241",
+    "storage_bucket": "usefulanimals-37241.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:532804692443:android:3771e80e07fc0ef7",
+        "android_client_info": {
+          "package_name": "com.yuruhuwaVR.usefulanimals"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "532804692443-has8ek76brq2lmu32usjcjr6rc4f69si.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0rx1MdxVw3Xejyj1EO8hA4gj679Q82Uo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
