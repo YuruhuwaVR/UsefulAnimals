@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlayManager : MonoBehaviour
 {
 
-	private Stage _stage;
+	//private Stage _stage;
 	private Animal _currentAnimal;
 
 	public enum Phase
@@ -36,7 +36,7 @@ public class PlayManager : MonoBehaviour
 	void GameClear()
 	{
 		//ゲームクリアしたときの処理
-	}ß
+	}
 
 	void GameRestart()
 	{
