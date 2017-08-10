@@ -142,6 +142,7 @@ PlayerSettings:
   resolutionScalingMode: 0
   applicationIdentifier:
     Standalone: com.yuruhuwaVR.usefulanimals
+    iOS: com.yuruhuwaVR.usefulanimals
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
