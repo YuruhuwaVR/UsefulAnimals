@@ -11,10 +11,18 @@ public class BlockCell : MonoBehaviour {
 	[SerializeField] Image blockCellImage;
 	[SerializeField] Button blockCellButton;
 	[SerializeField] Rigidbody2D rb;
+	private BlockArrangeManager blockArrangeManager;
+
+	private int row;
+	private int col;
+
 	private Vector3 position;
 	private Quaternion rotation;
+	private Vector3 rect_pos;
+	private int state_num;
 	private bool isBlock;
 	public bool IsBlock {get{return isBlock;}}
+
 
 	enum BlockState{
 		Clear = 0,
@@ -26,9 +34,15 @@ public class BlockCell : MonoBehaviour {
 	private BlockState state = BlockState.Clear;
 	 
 	void Start(){
+		blockArrangeManager = this.GetComponentInParent<BlockArrangeManager> ();
+		position = this.gameObject.transform.position;
+		rotation = this.gameObject.transform.rotation;
+		rect_pos = this.gameObject.GetComponent<RectTransform> ().localPosition;
+		row = (int)((225 - rect_pos.y) / 50);
+		col = (int)((225 + rect_pos.x ) / 50);
 		blockCellButton.onClick.AddListener (() => {
-			state = (BlockState)Enum.ToObject(typeof(BlockState), BlockChoiceManager.ChooseBlock);
-			ChangeBlock(state);
+			state_num = BlockChoiceManager.ChooseBlock;
+			Load(state_num);
 		});
 	}
 
@@ -71,9 +85,11 @@ public class BlockCell : MonoBehaviour {
 		}
 	}
 
+	void Assign(int row, int col, int value){
+		blockArrangeManager.Arrange (row, col, value);
+	}
+
 	public void ApplyGravity(){
-		position = this.gameObject.transform.position;
-		rotation = this.gameObject.transform.rotation;
 		rb.bodyType = RigidbodyType2D.Dynamic;
 		rb.gravityScale = 0.5f;
 	}
@@ -82,5 +98,11 @@ public class BlockCell : MonoBehaviour {
 		rb.bodyType = RigidbodyType2D.Static;
 		this.gameObject.transform.position = position;
 		this.gameObject.transform.rotation = rotation;	
+	}
+
+	public void Load(int state_num){
+		state = (BlockState)Enum.ToObject(typeof(BlockState), state_num);
+		ChangeBlock(state);
+		Assign(row, col, (int)state);
 	}
 }

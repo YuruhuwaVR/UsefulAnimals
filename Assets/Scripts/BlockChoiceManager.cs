@@ -7,7 +7,7 @@ public class BlockChoiceManager: MonoBehaviour{
 
 	public static int ChooseBlock {
 		get{ return chosenBlockNum;}
-		set{ chosenBlockNum = value;Debug.Log (value);}
+		set{ chosenBlockNum = value;}
 	}
 
 	void Start(){

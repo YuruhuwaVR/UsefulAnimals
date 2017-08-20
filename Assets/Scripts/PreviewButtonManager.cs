@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class PreviewManager : MonoBehaviour {
+public class PreviewButtonManager : MonoBehaviour {
 	[SerializeField] GameObject blockArrangePanel;
 	[SerializeField] Button previewButton;
 	[SerializeField] Button resetButton;
@@ -46,6 +46,7 @@ public class PreviewManager : MonoBehaviour {
 			}
 		}
 	}
+
 	void Preview(){
 		foreach(BlockCell cell in staticCells){
 			cell.gameObject.SetActive (false);
