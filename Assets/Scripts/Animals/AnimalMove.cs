@@ -11,7 +11,7 @@ public class AnimalMove : MonoBehaviour {
 	private Boolean _velocityFlag = true;
 	
 
-	// Use this for initialization
+	 //Use this for initialization
 	void Start()
 	{
 		_startPosition = gameObject.transform.position;
@@ -29,8 +29,8 @@ public class AnimalMove : MonoBehaviour {
 			_trailRenderer.enabled = true;
 			_rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
 			_rigidbody2D.mass = GetComponent<Animal>().Weight;
-
-			if (_rigidbody2D.velocity.x < 0.5 && _velocityFlag )
+			
+			if ((_rigidbody2D.velocity.x < 0.5 || gameObject.transform.position.y < -12f) && _velocityFlag )
 			{
 				_velocityFlag = false;
 				DestroyObject(gameObject, 5);
@@ -39,4 +39,6 @@ public class AnimalMove : MonoBehaviour {
 			}
 		}
 	}
+	
+
 }

@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class ClashBlock : MonoBehaviour
 {
-	[SerializeField] private float m_Strength, m_hp;
+	[SerializeField] public int AttackPower, Hp;
 	[SerializeField] private GameObject m_Effect;
-
+	
 	private void OnCollisionEnter2D(Collision2D other)
 	{
 		//相対速度を取得
 //		float damage = other.relativeVelocity.magnitude - m_Strength;
 		float damage = other.relativeVelocity.magnitude;
-//		print(damage);
-		m_Strength -= damage; 
+		Hp -= (int)damage; 
 		
-		if (m_Strength < 0)
+		if (Hp < 0)
 		{
 			Destroy(gameObject);
 			GameObject effect = GameObject.Instantiate(
@@ -36,4 +35,6 @@ public class ClashBlock : MonoBehaviour
 	{
 
 	}
+
+	
 }

@@ -40,7 +40,7 @@ Transform:
   m_GameObject: {fileID: 1461882926468570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -79,7 +79,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.1, y: 0}
   serializedVersion: 2
-  m_Radius: 1.3
+  m_Radius: 1.4
 --- !u!96 &96962358243193766
 TrailRenderer:
   serializedVersion: 2
@@ -179,9 +179,9 @@ MonoBehaviour:
   Id: 2
   Cost: 5
   Name: "\u30A6\u30B7"
+  Hp: 100
   Weight: 100
   Movespeed: 100
-  AttackPower: 100
 --- !u!114 &114847285223986694
 MonoBehaviour:
   m_ObjectHideFlags: 1

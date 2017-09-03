@@ -24,8 +24,6 @@ namespace AngryChicken2D
 		void Update()
 		{
 			
-			print(PlayManager.instance.GameStatus);
-			
 			//動物選択
 			if (canSpawn )
 			{
@@ -67,6 +65,7 @@ namespace AngryChicken2D
 			PlayManager.instance._currentCost += selectedAnimal.GetComponent<Animal>().Cost;
 			PlayManager.instance._currentAnimal = null;
 			Destroy(instantiateAnimal);
+			canSpawn = true;
 		}
 	}
 }

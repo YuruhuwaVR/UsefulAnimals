@@ -1,47 +1,35 @@
 ﻿using System;
+using System.CodeDom;
 using UniRx;
 using UnityEngine;
 
 public class Rat : Animal
 {
-
-//	private TrailRenderer _trail;
-//	private Vector3 _startPosition;
-//	private TrailRenderer _trailRenderer;
-	private Rigidbody2D _rigidbody2D;
-//	private Boolean _velocityFlag = true;
+	private bool _useable;
 	
-
-//	// Use this for initialization
+	// Use this for initialization
 	void Start()
 	{
-		
+		_useable = true;
 	}
 
-//	// Update is called once per frame
-//	void Update()
-//	{
-//		if (_startPosition == null) return;
-//		if (PlayManager.instance.GameStatus == PlayManager.Phase.Flying && gameObject.transform.position.x > _startPosition.x)
-//		{
-//			_trailRenderer.enabled = true;
-//			_rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
-//
-//			if (_rigidbody2D.velocity.x < 0.5 && _velocityFlag )
-//			{
-//				_velocityFlag = false;
-//				DestroyObject(gameObject, 3);
-//				Observable.Timer(TimeSpan.FromSeconds(2))
-//					.Subscribe(_ => PlayManager.instance.GameStatus = PlayManager.Phase.Ready);
-//
-//			}
-//		}
-//	}
+	// Update is called once per frame
+	void Update()
+	{
+		Dead();
+
+		if (PlayManager.instance.GameStatus == PlayManager.Phase.Flying && Input.GetMouseButton(0) && _useable)
+		{
+			SpecialAttack();
+			_useable = false;
+		}
+	}
 
 
 
 	protected override void SpecialAttack()
 	{
 		//必殺技の処理
+		print("rat special attack");
 	}
 }
