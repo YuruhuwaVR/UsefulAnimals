@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class LoadButtonManager : MonoBehaviour {
+public class LoadButtonManager : MonoBehaviour, ButtonManager {
 
 	[SerializeField] Button loadButton;
 	[SerializeField] GameObject blockArrangePanel;
@@ -11,7 +9,7 @@ public class LoadButtonManager : MonoBehaviour {
 	private int[] csvData;
 	private BlockCell[] blockCells;
 
-	void Start () {
+	public void Setup () {
 		loadButton.onClick.AddListener (() => {
 			csvManager = new CSVManager();
 			csvData = csvManager.CsvRead();

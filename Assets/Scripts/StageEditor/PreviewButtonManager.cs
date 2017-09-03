@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 
-public class PreviewButtonManager : MonoBehaviour {
+public class PreviewButtonManager : MonoBehaviour, ButtonManager {
 	[SerializeField] GameObject blockArrangePanel;
 	[SerializeField] Button previewButton;
 	[SerializeField] Button resetButton;
@@ -12,7 +11,7 @@ public class PreviewButtonManager : MonoBehaviour {
 	private List<BlockCell> dynamicCells;
 	private List<BlockCell> staticCells;
 
-	void Start(){
+	public void Setup(){
 		blockCells = new List<BlockCell> ();
 		dynamicCells = new List<BlockCell> ();
 		staticCells = new List<BlockCell> ();
