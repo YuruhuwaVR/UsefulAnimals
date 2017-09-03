@@ -5,9 +5,7 @@ using UnityEngine;
 public class Dog : Animal {
 
 	// Use this for initialization
-	void Start () {
-		SetValue(11,10,100,1000);
-		transform.position = new Vector3(0,0,0);		
+	void Start () {	
 	}
 	
 	// Update is called once per frame

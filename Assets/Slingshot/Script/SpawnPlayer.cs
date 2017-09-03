@@ -5,9 +5,10 @@ namespace AngryChicken2D
 {
 	public class SpawnPlayer : MonoBehaviour
 	{
-		bool canSpawn = true;
-		SlingShot slingShot;
-		GameObject catchObject;
+		private bool canSpawn = true;
+		private SlingShot slingShot;
+		private GameObject catchObject;
+		private GameObject instantiateAnimal;
 
 		[Range(3, 30)]
 		public int
@@ -26,13 +27,13 @@ namespace AngryChicken2D
 			print(PlayManager.instance.GameStatus);
 			
 			//動物選択
-			if (canSpawn)
+			if (canSpawn )
 			{
 				GameObject selectedAnimal = PlayManager.instance._currentAnimal;
 				if(selectedAnimal != null)
 				{
-					GameObject animal = Instantiate(selectedAnimal) as GameObject;
-					animal.transform.position = gameObject.transform.position;
+					instantiateAnimal = Instantiate(selectedAnimal) as GameObject;
+					instantiateAnimal.transform.position = gameObject.transform.position;
 					canSpawn = false;
 				}
 
@@ -52,20 +53,20 @@ namespace AngryChicken2D
 
 			if (PlayManager.instance.GameStatus == PlayManager.Phase.Ready)
 			{
+				PlayManager.instance._currentAnimal = null;
 				canSpawn = true;
 				catchObject = null;
 				PlayManager.instance.GameStatus = PlayManager.Phase.Select;
 			}
 		}
 
-		IEnumerator Shooting(GameObject obj)
+		// change animalボタン用
+		public void ChangeAnimal()
 		{
-			
-			DestroyObject(obj, 5);
-			yield return new WaitForSeconds(respawnTime);
+			GameObject selectedAnimal = PlayManager.instance._currentAnimal;
+			PlayManager.instance._currentCost += selectedAnimal.GetComponent<Animal>().Cost;
 			PlayManager.instance._currentAnimal = null;
-			canSpawn = true;
-			PlayManager.instance.GameStatus = PlayManager.Phase.Select;
+			Destroy(instantiateAnimal);
 		}
 	}
 }

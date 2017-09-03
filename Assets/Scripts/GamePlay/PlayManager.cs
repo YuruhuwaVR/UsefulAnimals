@@ -28,7 +28,7 @@ public class PlayManager : SingletonMonoBehaviour<PlayManager>
 	// Use this for initialization
 	void Start ()
 	{
-		GameStatus = Phase.Start;
+		GameStatus = Phase.Select;
 	}
 	
 	// Update is called once per frame

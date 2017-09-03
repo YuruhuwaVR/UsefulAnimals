@@ -6,9 +6,7 @@ public class Cock : Animal {
 
 	// Use this for initialization
 	void Start () {
-		
-		SetValue(10,10,100,1000);
-		transform.position = new Vector3(0,0,0);		
+				
 	}
 	
 	// Update is called once per frame

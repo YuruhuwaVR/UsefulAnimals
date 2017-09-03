@@ -23,7 +23,8 @@ GameObject:
   - component: {fileID: 58334124536920054}
   - component: {fileID: 50774029096209772}
   - component: {fileID: 96962358243193766}
-  - component: {fileID: 114678740750039716}
+  - component: {fileID: 114820503112504078}
+  - component: {fileID: 114847285223986694}
   m_Layer: 0
   m_Name: Ox
   m_TagString: Player
@@ -86,7 +87,7 @@ TrailRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1461882926468570}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -164,23 +165,34 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
---- !u!114 &114678740750039716
+--- !u!114 &114820503112504078
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1461882926468570}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2813802ce6d30486da30d0922a309497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Id: 1
-  Weight: 10
+  Id: 2
+  Cost: 5
+  Name: "\u30A6\u30B7"
+  Weight: 100
   Movespeed: 100
-  AttackPower: 50
-  _playManager: {fileID: 114183200818798908, guid: c1b78114b62394bfa9fe1379e24cc75a,
-    type: 2}
+  AttackPower: 100
+--- !u!114 &114847285223986694
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1461882926468570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95deac653033c4deb937f625cb52e214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212651028440164790
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -23,7 +23,8 @@ GameObject:
   - component: {fileID: 58334124536920054}
   - component: {fileID: 50774029096209772}
   - component: {fileID: 96962358243193766}
-  - component: {fileID: 114202133876561164}
+  - component: {fileID: 114847285223986694}
+  - component: {fileID: 114528655914847204}
   m_Layer: 0
   m_Name: Rat
   m_TagString: Player
@@ -57,7 +58,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 1
+  m_AngularDrag: 3
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -164,7 +165,7 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
---- !u!114 &114202133876561164
+--- !u!114 &114528655914847204
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -176,9 +177,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 1
+  Cost: 5
+  Name: Rat
   Weight: 10
   Movespeed: 10
   AttackPower: 10
+--- !u!114 &114847285223986694
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1461882926468570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95deac653033c4deb937f625cb52e214, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212651028440164790
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -7,7 +7,7 @@ public class Snake : Animal {
 	// Use this for initialization
 	void Start () {
 		
-		SetValue(6,10,100,1000);
+//		SetValue(6,10,100,1000);
 		transform.position = new Vector3(0,0,0);
 		
 	}
