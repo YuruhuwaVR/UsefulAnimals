@@ -1,16 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 
-public class HTTPRequest : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+interface HTTPRequest {
+	string RelativeUrl { get; }
+	Dictionary<string, object> Parameters { get; }
 }
