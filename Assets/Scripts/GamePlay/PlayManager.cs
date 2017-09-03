@@ -4,13 +4,15 @@ using JetBrains.Annotations;
 using UnityEngine;
 
 
-public class PlayManager : MonoBehaviour
+public class PlayManager : SingletonMonoBehaviour<PlayManager>
 {
 
 	//private Stage _stage;
-	private Animal _currentAnimal;
+	public GameObject _currentAnimal;
 
-	public enum Phase
+	public Phase GameStatus;
+
+	public enum Phase 
 	{
 		Start,
 		Select,
@@ -18,14 +20,15 @@ public class PlayManager : MonoBehaviour
 		Flying
 	}
 
-	private int _currentCost;
+	public int _currentCost;
 	private bool _specialAttack; //これAnimalクラス？？
 	
 	
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+	{
+		GameStatus = Phase.Start;
 	}
 	
 	// Update is called once per frame
@@ -41,6 +44,7 @@ public class PlayManager : MonoBehaviour
 	void GameRestart()
 	{
 		//リスタートするときの処理
+		GameStatus = Phase.Select;
 	}
 
 	void GameFail()
