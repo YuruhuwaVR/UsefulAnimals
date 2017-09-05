@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 222327607977189738}
   - component: {fileID: 114819460872752760}
   - component: {fileID: 114040252905315348}
+  - component: {fileID: 114210913709674274}
   m_Layer: 0
   m_Name: DeleteButton
   m_TagString: Untagged
@@ -126,6 +127,7 @@ GameObject:
   - component: {fileID: 222499670087052040}
   - component: {fileID: 114123272234154816}
   - component: {fileID: 114693168806623134}
+  - component: {fileID: 114230517989705672}
   m_Layer: 0
   m_Name: EditButton
   m_TagString: Untagged
@@ -179,6 +181,7 @@ GameObject:
   - component: {fileID: 222616581589355088}
   - component: {fileID: 114456087935864256}
   - component: {fileID: 114786233643827782}
+  - component: {fileID: 114071999619714392}
   m_Layer: 0
   m_Name: PublishButton
   m_TagString: Untagged
@@ -227,6 +230,19 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114071999619714392
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1938990797389024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a679a3f05914a4c87e97fbdd77186e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  publishButton: {fileID: 114786233643827782}
+  privateCellManager: {fileID: 114710468328785388}
 --- !u!114 &114123272234154816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -287,6 +303,30 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Publish
+--- !u!114 &114210913709674274
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1396880407602694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80f16c7cb1faf4e798331613919d80ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deleteButton: {fileID: 114040252905315348}
+--- !u!114 &114230517989705672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1895273113992002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb0c56d1947fa4931a1164949cca4faa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  editButton: {fileID: 114693168806623134}
 --- !u!114 &114231057039746922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -593,6 +633,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98068afeb37784946a7ed18b9a203685, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  editButtonManager: {fileID: 114230517989705672}
+  publishButtonManager: {fileID: 114071999619714392}
+  deleteButtonManager: {fileID: 114210913709674274}
 --- !u!114 &114786233643827782
 MonoBehaviour:
   m_ObjectHideFlags: 1
