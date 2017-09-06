@@ -33,7 +33,8 @@ public class BlockCell : MonoBehaviour {
 
 	private BlockState state = BlockState.Clear;
 	 
-	void Start(){
+
+	void Setup(){
 		blockArrangeManager = this.GetComponentInParent<BlockArrangeManager> ();
 		position = this.gameObject.transform.position;
 		rotation = this.gameObject.transform.rotation;
@@ -101,6 +102,8 @@ public class BlockCell : MonoBehaviour {
 	}
 
 	public void Load(int state_num){
+		Setup ();
+
 		state = (BlockState)Enum.ToObject(typeof(BlockState), state_num);
 		ChangeBlock(state);
 		Assign(row, col, (int)state);

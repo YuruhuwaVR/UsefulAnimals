@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CreateButtonManager : MonoBehaviour, ButtonManager{
+public class CreateButtonManager : MonoBehaviour{
 
 	[SerializeField] Button createButton;
 	[SerializeField] Transform privateView;
@@ -16,7 +16,7 @@ public class CreateButtonManager : MonoBehaviour, ButtonManager{
 			cellPrefab = Resources.Load<GameObject>(PRIVATESTAGECELL);
 			GameObject cell = Instantiate(cellPrefab, privateView);
 			PrivateCellManager cellManager = cell.GetComponent<PrivateCellManager>();
-			cellManager.Setup(DateTime.Now.ToString("s"), publicView);
+			cellManager.Setup(DateTime.Now.ToString("s"), publicView, privateView);
 		});
 	}
 }

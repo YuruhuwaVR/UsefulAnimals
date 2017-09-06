@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 222482149890562942}
   - component: {fileID: 114256325117826596}
   - component: {fileID: 114322475909245712}
+  - component: {fileID: 114706635348238484}
   m_Layer: 0
   m_Name: CopyButton
   m_TagString: Untagged
@@ -622,6 +623,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114706635348238484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1370860823136036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e596e4f602e84f1fae661a817030b98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  copyButton: {fileID: 114322475909245712}
 --- !u!114 &114710468328785388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -634,6 +647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   editButtonManager: {fileID: 114230517989705672}
+  copyButtonManager: {fileID: 114706635348238484}
   publishButtonManager: {fileID: 114071999619714392}
   deleteButtonManager: {fileID: 114210913709674274}
 --- !u!114 &114786233643827782

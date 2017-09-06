@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PublishButtonManager : MonoBehaviour, ButtonManager {
+public class PublishButtonManager : MonoBehaviour{
 
 	[SerializeField] Button publishButton;
 	[SerializeField] PrivateCellManager privateCellManager;

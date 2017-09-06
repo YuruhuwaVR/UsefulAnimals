@@ -11,7 +11,15 @@ public class CSVManager{
 
 	private const int SIZE = 10;
 	private int[] csvData;
-	private string path = Application.dataPath + "/Resources/csv/squares.csv";
+	private string stageId;
+	private string path;
+
+	public string StageId{get{ return stageId;} set{ stageId = value;}}
+
+	public CSVManager (string stageId){
+		this.StageId = stageId;
+		path = Application.dataPath + "/Resources/csv/" + stageId + ".csv";
+	}
 
 	public int[] CsvRead () {
 

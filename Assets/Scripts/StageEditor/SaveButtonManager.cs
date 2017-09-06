@@ -1,18 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class SaveButtonManager : MonoBehaviour, ButtonManager {
+public class SaveButtonManager : MonoBehaviour{
 
 	[SerializeField] Button saveButton;
 	[SerializeField] BlockArrangeManager blockArrangeManager;
 	private int[, ] csvData;
-	private CSVManager csvManager;
 
-	public void Setup () {
+	public void Setup (CSVManager csvManager) {
 		saveButton.onClick.AddListener (() => {
 			csvData = blockArrangeManager.Squares;
-
-			csvManager = new CSVManager ();
 
 			csvManager.CsvWrite(csvData);
 		});

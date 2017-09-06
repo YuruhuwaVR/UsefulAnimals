@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class PreviewButtonManager : MonoBehaviour, ButtonManager {
+public class PreviewButtonManager : MonoBehaviour{
 	[SerializeField] GameObject blockArrangePanel;
 	[SerializeField] Button previewButton;
 	[SerializeField] Button resetButton;

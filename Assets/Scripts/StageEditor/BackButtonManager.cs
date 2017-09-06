@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class BackButtonManager : MonoBehaviour, ButtonManager {
+public class BackButtonManager : MonoBehaviour{
 
 	[SerializeField] Button backButton;
 

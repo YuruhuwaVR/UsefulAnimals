@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PublicButtonManager : MonoBehaviour, ButtonManager {
+public class PublicButtonManager : MonoBehaviour {
 
 	[SerializeField] GameObject publicView;
 	[SerializeField] GameObject privateView;
