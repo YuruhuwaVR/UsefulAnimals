@@ -5,11 +5,13 @@ public class StageListManager : MonoBehaviour {
 	[SerializeField] PublicButtonManager publicButtonManager;
 	[SerializeField] PrivateButtonManager privateButtonManager;
 	[SerializeField] CreateButtonManager createButtonManager;
+	[SerializeField] TextManager textManager;
 
 	void Awake () {
 		publicButtonManager.Setup ();
 		privateButtonManager.Setup ();
 		createButtonManager.Setup ();
+		textManager.Setup ();
 	}
 	
 

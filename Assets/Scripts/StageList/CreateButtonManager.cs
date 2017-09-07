@@ -13,10 +13,15 @@ public class CreateButtonManager : MonoBehaviour{
 
 	public void Setup(){
 		createButton.onClick.AddListener (() => {
-			cellPrefab = Resources.Load<GameObject>(PRIVATESTAGECELL);
-			GameObject cell = Instantiate(cellPrefab, privateView);
-			PrivateCellManager cellManager = cell.GetComponent<PrivateCellManager>();
-			cellManager.Setup(DateTime.Now.ToString("s"), publicView, privateView);
+			string stageId = DateTime.Now.ToString("s");
+			CreateCell(stageId);
 		});
+	}
+
+	public void CreateCell(string stageId){
+		cellPrefab = Resources.Load<GameObject>(PRIVATESTAGECELL);
+		GameObject cell = Instantiate(cellPrefab, privateView);
+		PrivateCellManager cellManager = cell.GetComponent<PrivateCellManager>();
+		cellManager.Setup(stageId, publicView, privateView);
 	}
 }

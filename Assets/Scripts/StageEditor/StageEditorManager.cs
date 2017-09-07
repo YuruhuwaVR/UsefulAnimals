@@ -22,7 +22,6 @@ public class StageEditorManager : MonoBehaviour {
 
 	public void Setup(CSVManager csvManager){
 		this.stageId = csvManager.StageId;
-		print (this.stageId);
 
 		Load (csvManager);
 

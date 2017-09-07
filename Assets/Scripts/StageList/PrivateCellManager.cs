@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using UnityEngine;
 
 public class PrivateCellManager : MonoBehaviour {
 
@@ -8,8 +9,8 @@ public class PrivateCellManager : MonoBehaviour {
 	[SerializeField] DeleteButtonManager deleteButtonManager;
 
 	private string stageId;
+	private string txtpath;
 	private Transform publicView;
-	private CSVManager csvManager;
 
 	const int PANELSIZE = 10;
 
@@ -18,21 +19,40 @@ public class PrivateCellManager : MonoBehaviour {
 
 	public void Setup(string id, Transform publicView, Transform privateView){
 		stageId = id;
+		txtpath = Application.dataPath + "/Resources/txt/private/" + id + ".txt";
 		this.publicView = publicView;
 
-		csvManager = InitializeCSVData (id);
+		CSVManager csvManager = InitializeCSVData (id);
 
 		editButtonManager.Setup (csvManager);
 		copyButtonManager.Setup (publicView, privateView);
 		publishButtonManager.Setup ();
 		deleteButtonManager.Setup ();
+
+		Save ();
+	}
+
+	private void Save(){
+		if (File.Exists (txtpath)) {
+			return;
+		}
+			
+
+		using (StreamWriter sw = new StreamWriter (txtpath)) {
+			sw.WriteLine(stageId);			
+		}
 	}
 
 	private CSVManager InitializeCSVData(string stageId){
 		CSVManager m_csvManager = new CSVManager (stageId);
-		m_csvManager.CsvWrite (new int[PANELSIZE, PANELSIZE]);
+
+		if (!(File.Exists (txtpath))) {
+			m_csvManager.CsvWrite (new int[PANELSIZE, PANELSIZE]);
+		}
 		return m_csvManager;
 	}
+
+
 
 
 
