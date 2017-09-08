@@ -5,6 +5,14 @@ Temp/
 Obj/
 UnityGenerated/
 Library/
+Assets/Resources/csv/*.csv
+Assets/Resources/csv/*.meta
+Assets/Resources/txt/private/*.txt
+Assets/Resources/txt/private/*.meta
+Assets/Resources/txt/public/*.txt
+Assets/Resources/txt/public/*.meta
+
+
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
