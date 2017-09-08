@@ -10,6 +10,7 @@ public class PrivateCellManager : MonoBehaviour {
 
 	private string stageId;
 	private string txtPath;
+	private string csvPath;
 	private Transform publicView;
 
 	const int PANELSIZE = 10;
@@ -20,6 +21,7 @@ public class PrivateCellManager : MonoBehaviour {
 	public void Setup(string id, Transform publicView, Transform privateView){
 		stageId = id;
 		txtPath = Application.dataPath + "/Resources/txt/private/" + id + ".txt";
+		csvPath = Application.dataPath + "/Resources/csv/" + id + ".txt";
 		this.publicView = publicView;
 
 		CSVManager csvManager = InitializeCSVData (id);
@@ -27,7 +29,7 @@ public class PrivateCellManager : MonoBehaviour {
 		editButtonManager.Setup (csvManager);
 		copyButtonManager.Setup (publicView, privateView);
 		publishButtonManager.Setup ();
-		deleteButtonManager.Setup (txtPath);
+		deleteButtonManager.Setup (txtPath, csvPath);
 
 		Save ();
 	}

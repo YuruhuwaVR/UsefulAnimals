@@ -7,12 +7,14 @@ public class PublicCellManager : MonoBehaviour {
 
 	private string stageId;
 	private string txtPath;
+	private string csvPath;
 	
 	public void Setup (string id) {
 		stageId = id;
 		txtPath = Application.dataPath + "/Resources/txt/public/" + id + ".txt";
+		csvPath = Application.dataPath + "/Resources/csv/" + id + ".txt";
 
-		deleteButtonManager.Setup (txtPath);
+		deleteButtonManager.Setup (txtPath, csvPath);
 
 		Save ();
 	}
