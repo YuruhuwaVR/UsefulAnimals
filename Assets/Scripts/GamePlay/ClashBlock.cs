@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClashBlock : MonoBehaviour
+public abstract class ClashBlock : MonoBehaviour
 {
 	[SerializeField] public int AttackPower, Hp;
 	[SerializeField] private GameObject m_Effect;
@@ -25,6 +25,22 @@ public class ClashBlock : MonoBehaviour
 		}
 	}
 
+	public void ForceToObject(Vector2 position, float power)
+	{
+		Vector2 direction;
+		direction.x = gameObject.transform.position.x - position.x;
+		direction.y = gameObject.transform.position.y - position.y;
+		direction = direction.normalized;
+		Rigidbody2D rb = GetComponent<Rigidbody2D>();
+		rb.AddForce(direction*power, ForceMode2D.Impulse);
+	}
+
+	//Dragonによる攻撃
+	public void AttackedByDragon(float power)
+	{
+		Hp -= (int) power;
+	}
+
 	// Use this for initialization
 	void Start()
 	{
@@ -35,6 +51,4 @@ public class ClashBlock : MonoBehaviour
 	{
 
 	}
-
-	
 }

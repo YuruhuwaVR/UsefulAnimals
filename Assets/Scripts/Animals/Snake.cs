@@ -2,23 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Snake : Animal {
+public class Snake : Animal
+{
 
-	// Use this for initialization
-	void Start () {
-		
-//		SetValue(6,10,100,1000);
-		transform.position = new Vector3(0,0,0);
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	[SerializeField] private float _power;
 
 	protected override void SpecialAttack()
 	{
 		//必殺技
+		Vector2 direction = new Vector2(-1.0f, 0.8f);
+		gameObject.GetComponent<Rigidbody2D>().AddForce(direction * _power);
+		
 	}
 }

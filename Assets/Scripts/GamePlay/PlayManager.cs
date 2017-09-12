@@ -8,6 +8,8 @@ public class PlayManager : SingletonMonoBehaviour<PlayManager>
 {
 
 	//private Stage _stage;
+	[SerializeField] private GameObject _stageClearPop;
+	[SerializeField] private GameObject _stageFailedPop;
 	public GameObject _currentAnimal;
 
 	public Phase GameStatus;
@@ -39,17 +41,13 @@ public class PlayManager : SingletonMonoBehaviour<PlayManager>
 	void GameClear()
 	{
 		//ゲームクリアしたときの処理
-	}
-
-	void GameRestart()
-	{
-		//リスタートするときの処理
-		GameStatus = Phase.Select;
+		_stageClearPop.SetActive(true);
 	}
 
 	void GameFail()
 	{
 		//ゲームに失敗した時の処理
+		_stageFailedPop.SetActive(true);
 	}
 
 	void Check()

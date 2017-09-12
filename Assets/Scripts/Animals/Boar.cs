@@ -1,20 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using UnityEngine;
 
-public class Boar : Animal {
+public class Boar : Animal
+{
 
-	// Use this for initialization
-	void Start () {
-	}
+	[SerializeField] private float _power;
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
 	protected override void SpecialAttack()
 	{
 		//必殺技
+		gameObject.GetComponent<Rigidbody2D>().AddForce(Direction * _power);
 	}
 }

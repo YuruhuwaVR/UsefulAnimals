@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 457ed7c1a754e41e083fadab362dd9dd
+timeCreated: 1504533939
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: JK Gothic L
+  fontNames:
+  - JK Gothic L
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

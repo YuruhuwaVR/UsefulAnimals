@@ -26,19 +26,32 @@ public class AnimalMove : MonoBehaviour {
 		if (_startPosition == null) return;
 		if (PlayManager.instance.GameStatus == PlayManager.Phase.Flying && gameObject.transform.position.x > _startPosition.x)
 		{
-			_trailRenderer.enabled = true;
+			Flying();
+		}
+	}
+
+
+	private void Flying()
+	{
+		if (_trailRenderer != null) _trailRenderer.enabled = true;
+		if (_rigidbody2D != null)
+		{
 			_rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
 			_rigidbody2D.mass = GetComponent<Animal>().Weight;
-			
-			if ((_rigidbody2D.velocity.x < 0.5 || gameObject.transform.position.y < -12f) && _velocityFlag )
+			if ((_rigidbody2D.velocity.x < 0.5 || gameObject.transform.position.y < -12f) && _velocityFlag)
 			{
-				_velocityFlag = false;
-				DestroyObject(gameObject, 5);
-				Observable.Timer(TimeSpan.FromSeconds(5))
-					.Subscribe(_ => PlayManager.instance.GameStatus = PlayManager.Phase.Ready);
+				Rolling();
+
 			}
 		}
 	}
-	
+
+	private void Rolling()
+	{
+		_velocityFlag = false;
+		DestroyObject(gameObject, 5);
+		Observable.Timer(TimeSpan.FromSeconds(5))
+			.Subscribe(_ => PlayManager.instance.GameStatus = PlayManager.Phase.Ready);
+	}
 
 }

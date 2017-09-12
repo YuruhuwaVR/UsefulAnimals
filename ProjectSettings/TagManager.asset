@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Tree
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - 
   - 
   - Background
-  - 
+  - ThroughTreeLayer
   - 
   - 
   - 
@@ -40,6 +42,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 2268321069
+    locked: 0
+  - name: ThroughTreeLayer
+    uniqueID: 3490349687
     locked: 0
   - name: Default
     uniqueID: 0

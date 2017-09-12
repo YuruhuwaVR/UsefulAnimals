@@ -4,21 +4,16 @@ using UnityEngine;
 
 public class Horse : Animal {
 
-	// Use this for initialization
-	void Start () {
-		
-//		SetValue(7,10,100,1000);
-		transform.position = new Vector3(0,0,0);
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
 	protected override void SpecialAttack()
 	{
 		//必殺技
+		var obstacles = GameObject.FindGameObjectsWithTag ("Obstacle");
+		foreach (var obj in obstacles)
+		{
+			if (obj.GetComponent<Thicket>() != null)
+			{
+				obj.GetComponent<Thicket>().ChangeLayer();
+			}
+		}
 	}
 }

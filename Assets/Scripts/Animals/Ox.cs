@@ -1,24 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Ox : Animal
 {
-
+	[SerializeField] private float _specialAttackRadius;
+	[SerializeField] private float _power;
 		
-	// Use this for initialization
-	void Start () {
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-	}
-
-
 	protected override void SpecialAttack()
 	{
-		//必殺技
+		print("special attack");
+		var obstacles = GameObject.FindGameObjectsWithTag ("Obstacle");
+		foreach (var obj in obstacles)
+		{
+			var distance = Vector2.Distance(gameObject.transform.position, obj.transform.position);
+			if (!(distance < _specialAttackRadius)) continue;
+			print(obj.name);
+			if (obj.GetComponent<ClashBlock>() != null)
+			{
+				obj.GetComponent<ClashBlock>().ForceToObject(gameObject.transform.position, _power);
+			}
+		}
 	}
 }

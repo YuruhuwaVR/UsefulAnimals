@@ -4,18 +4,10 @@ using UnityEngine;
 
 public class Sheep : Animal {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
 	protected override void SpecialAttack()
 	{
 		//必殺技
+		gameObject.transform.localScale *= 3;
+		Weight *= 3;
 	}
 }

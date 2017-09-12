@@ -2,21 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rabbit : Animal {
-
-	// Use this for initialization
-	void Start () {
-//		SetValue(4,10,100,1000);
-		transform.position = new Vector3(0,0,0);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
+public class Rabbit : Animal
+{
+	[SerializeField] private float _power; 
 	protected override void SpecialAttack()
 	{
 		//必殺技
+		gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up*_power);
 	}
 }
+

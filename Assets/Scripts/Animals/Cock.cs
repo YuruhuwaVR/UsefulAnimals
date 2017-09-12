@@ -2,20 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cock : Animal {
+public class Cock : Animal
+{
 
-	// Use this for initialization
-	void Start () {
-				
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	[SerializeField] private GameObject _egg;
+	[SerializeField] private int eggNum;
 
 	protected override void SpecialAttack()
 	{
 		//必殺技
+		for (int i = 0; i < eggNum; i++)
+		{
+			Instantiate(_egg, gameObject.transform.position, Quaternion.identity);
+		}
 	}
 }
